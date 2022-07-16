@@ -54,6 +54,7 @@ header{
 .columns *{
   margin: 0px 0px 15px 0px;
   flex: 1 0 calc(50% - 31px);
+  min-width: 200px;
 }
 main{
   max-width: 800px;
