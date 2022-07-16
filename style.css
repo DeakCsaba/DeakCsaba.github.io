@@ -2,6 +2,7 @@ body{
   margin:auto;
   max-width: 1296px;
   color: #222;
+  background-color: rgba(111, 111, 111, 0.111);
   font-family: 'Josefin Sans', sans-serif;
 }
 header{
@@ -16,6 +17,8 @@ header{
   justify-content: flex-end;
   gap: 0px;
   margin-bottom: 50px;
+  border-radius: 3px;
+  box-shadow: 0px 5px 20px 0px ##3f3f3f;
 }
 .header{
   text-align: left;
@@ -76,6 +79,8 @@ blockquote {
   flex-wrap: no-wrap;
   max-width: 800px;
   margin: 10px 0px;
+  border-radius: 15px;
+  box-shadow: 10px 5px 20px 2px #9d010172;
 }
 h1{
   text-transform: uppercase;
@@ -93,5 +98,7 @@ blockquote::before {
   top: -110px;
 }
 hr{
-  border-style: dotted;
+  border-style: inset;
+  border-radius: 1px;
+  box-shadow: 3px 3px 6px 0px #9d0101;
 }
