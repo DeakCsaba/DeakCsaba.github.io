@@ -4,6 +4,7 @@ body{
   color: #222;
   background-color: rgba(111, 111, 111, 0.111);
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
 }
 header{
   background-image: url("https://raw.githubusercontent.com/green-fox-academy/myfirstapp-syllabus/master/assets/first-website-header.png");
@@ -44,14 +45,14 @@ header{
   display: flex;
   flex-direction: rows;
   align-items: center;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
 .columns *{
   margin: 0px 0px 15px 0px;
-  flex: 1 1 48%;
+  flex: 0 0 48%;
 }
 main{
   max-width: 800px;
