@@ -38,7 +38,7 @@ function changePicture (index) {
     //console.log('A kiválasztott kép ID-ja: ',selectedPictureId,'. a tömb értékei: ',pictureLoad);
     }
 
-/*
+/* NOT WORKING :(( BUT FOUND ANOTHER SOLUTION!
 function AsideInactiveSwitch() {
     if (selectedPictureId == 0) {
         $( "#asideLeft" ).attr('id', 'asideLeftInactive')
@@ -64,6 +64,8 @@ function AsideInactiveSwitch(selectedId) {
         }
 }
 
+/*
+OLD VERSION: INACTIVATE ASIDE AT FIRST AND LAST PIC
 $( "#asideLeft" ).parent().click(function() {
     if (selectedPictureId > 0) {
         changePicture(selectedPictureId-1)
@@ -73,5 +75,22 @@ $( "#asideLeft" ).parent().click(function() {
 $( "#asideRight" ).parent().click(function() {
     if (selectedPictureId < gallery.length-1) {
         changePicture(selectedPictureId+1)
+        }
+    });
+*/
+
+$( "#asideLeft" ).parent().click(function() {
+    if (selectedPictureId > 0) {
+        changePicture(selectedPictureId-1)
+        } else{
+            changePicture(gallery.length-1)
+        }
+    });
+
+$( "#asideRight" ).parent().click(function() {
+    if (selectedPictureId < gallery.length-1) {
+        changePicture(selectedPictureId+1)
+        } else{
+            changePicture(0)    
         }
     });
