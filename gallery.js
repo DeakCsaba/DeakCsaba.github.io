@@ -22,7 +22,7 @@ changePicture(selectedPictureId)
 
 $( ".galleryThumbnail" ).click(function() {
         //console.log( "kattintottál a képre: "+$(this).attr('galleryId'));
-        changePicture($(this).attr('galleryId'))
+        changePicture($(this).attr('galleryId'));
       });
 
 function changePicture (index) {
@@ -32,9 +32,9 @@ function changePicture (index) {
     $( "#pictureDescription" ).text(pictureLoad.description);
 
     selectedPictureId = index;
-    $("[id|='galleryThumbnailActive']").attr('id', '')
-    $( "img[galleryId|='"+index+"']" ).attr('id', 'galleryThumbnailActive')
-    AsideInactiveSwitch(selectedPictureId)
+    $("[id|='galleryThumbnailActive']").attr('id', '');
+    $( "img[galleryId|='"+index+"']" ).attr('id', 'galleryThumbnailActive');
+    AsideInactiveSwitch(selectedPictureId);
     //console.log('A kiválasztott kép ID-ja: ',selectedPictureId,'. a tömb értékei: ',pictureLoad);
     }
 
@@ -52,15 +52,15 @@ function AsideInactiveSwitch() {
 
 function AsideInactiveSwitch(selectedId) {
     if (selectedId == 0) {
-        $( "#asideLeft" ).css('color', 'aliceblue')
+        $( "#asideLeft" ).css('color', 'aliceblue');
         } else {
-            $( "#asideLeft" ).css('color', 'black')
+            $( "#asideLeft" ).css('color', 'black');
         }
         
     if (selectedId == gallery.length-1) {
-        $( "#asideRight" ).css('color', 'aliceblue')
+        $( "#asideRight" ).css('color', 'aliceblue');
         } else {
-            $( "#asideRight" ).css('color', 'black')
+            $( "#asideRight" ).css('color', 'black');
         }
 }
 
@@ -81,16 +81,16 @@ $( "#asideRight" ).parent().click(function() {
 
 $( "#asideLeft" ).parent().click(function() {
     if (selectedPictureId > 0) {
-        changePicture(selectedPictureId-1)
+        changePicture(parseInt(selectedPictureId)-1);
         } else{
-            changePicture(gallery.length-1)
+            changePicture(gallery.length-1);
         }
     });
 
 $( "#asideRight" ).parent().click(function() {
-    if (selectedPictureId < gallery.length-1) {
-        changePicture(selectedPictureId+1)
+    if (selectedPictureId < (gallery.length-1)) {
+        changePicture(parseInt(selectedPictureId)+1);
         } else{
-            changePicture(0)    
+            changePicture(0);    
         }
     });
