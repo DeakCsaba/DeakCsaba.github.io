@@ -1,4 +1,21 @@
+nav{
+  max-width: 1296px;
+  position: fixed;
+  top: 0px;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+  width: auto;
+}
+nav * {
+  margin: 0px;
+  padding: 0px;
+}
 body{
+  position: relative;
   margin:auto;
   max-width: 1296px;
   color: #222;

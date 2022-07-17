@@ -1,0 +1,11 @@
+button{
+    background-color: darkgrey;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    box-shadow: 0px 0px 5px 2px grey;
+    border-radius: 7px;
+    border-width: 0px;
+    padding: 5px;
+    margin: 5px;
+}
