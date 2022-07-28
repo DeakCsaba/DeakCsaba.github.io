@@ -96,6 +96,7 @@ $("#arrowRight").parent().click(function () {
 });
 
 $(window).resize(function () {
+    window.scrollTo(0,1);
     $([document.documentElement, document.body]).animate({
         scrollTop: $("#picture").offset().top
     }, 100);
