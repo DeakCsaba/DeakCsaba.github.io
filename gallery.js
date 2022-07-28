@@ -9,8 +9,8 @@ let gallery = [
 ]
 
 gallery.forEach((data, index) => {
-//    console.log("A kép címe: "+data.title+", az elérési helye:"+data.src+" és indexe: "+index)
-    $( "#gallery" ).append('<img class="galleryThumbnail" src="'+data.thumbnail+'" galleryId="'+index+'"></img>')
+    //    console.log("A kép címe: "+data.title+", az elérési helye:"+data.src+" és indexe: "+index)
+    $("#gallery").append('<img class="galleryThumbnail" src="' + data.thumbnail + '" galleryId="' + index + '"></img>')
 })
 
 //$( "#gallery img:first-child" )
@@ -20,23 +20,23 @@ gallery.forEach((data, index) => {
 let selectedPictureId = 0;
 changePicture(selectedPictureId)
 
-$( ".galleryThumbnail" ).click(function() {
-        //console.log( "kattintottál a képre: "+$(this).attr('galleryId'));
-        changePicture($(this).attr('galleryId'));
-      });
+$(".galleryThumbnail").click(function () {
+    //console.log( "kattintottál a képre: "+$(this).attr('galleryId'));
+    changePicture($(this).attr('galleryId'));
+});
 
-function changePicture (index) {
-    let pictureLoad = {sauce: gallery[index].src, title: gallery[index].title, description: gallery[index].description};
-    $( "#picture" ).attr('src', pictureLoad.sauce);
-    $( "#pictureTitle" ).text(pictureLoad.title);
-    $( "#pictureDescription" ).text(pictureLoad.description);
+function changePicture(index) {
+    let pictureLoad = { sauce: gallery[index].src, title: gallery[index].title, description: gallery[index].description };
+    $("#picture").attr('src', pictureLoad.sauce);
+    $("#pictureTitle").text(pictureLoad.title);
+    $("#pictureDescription").text(pictureLoad.description);
 
     selectedPictureId = index;
     $("[id|='galleryThumbnailActive']").attr('id', '');
-    $( "img[galleryId|='"+index+"']" ).attr('id', 'galleryThumbnailActive');
+    $("img[galleryId|='" + index + "']").attr('id', 'galleryThumbnailActive');
     arrowInactiveSwitch(selectedPictureId);
     //console.log('A kiválasztott kép ID-ja: ',selectedPictureId,'. a tömb értékei: ',pictureLoad);
-    }
+}
 
 /* NOT WORKING :(( BUT FOUND ANOTHER SOLUTION!
 function arrowInactiveSwitch() {
@@ -52,16 +52,16 @@ function arrowInactiveSwitch() {
 
 function arrowInactiveSwitch(selectedId) {
     if (selectedId == 0) {
-        $( "#arrowLeft" ).css('color', 'aliceblue');
-        } else {
-            $( "#arrowLeft" ).css('color', 'black');
-        }
-        
-    if (selectedId == gallery.length-1) {
-        $( "#arrowRight" ).css('color', 'aliceblue');
-        } else {
-            $( "#arrowRight" ).css('color', 'black');
-        }
+        $("#arrowLeft").css('color', 'aliceblue');
+    } else {
+        $("#arrowLeft").css('color', 'black');
+    }
+
+    if (selectedId == gallery.length - 1) {
+        $("#arrowRight").css('color', 'aliceblue');
+    } else {
+        $("#arrowRight").css('color', 'black');
+    }
 }
 
 /*
@@ -79,18 +79,24 @@ $( "#arrowRight" ).parent().click(function() {
     });
 */
 
-$( "#arrowLeft" ).parent().click(function() {
+$("#arrowLeft").parent().click(function () {
     if (selectedPictureId > 0) {
-        changePicture(parseInt(selectedPictureId)-1);
-        } else{
-            changePicture(gallery.length-1);
-        }
-    });
+        changePicture(parseInt(selectedPictureId) - 1);
+    } else {
+        changePicture(gallery.length - 1);
+    }
+});
 
-$( "#arrowRight" ).parent().click(function() {
-    if (selectedPictureId < (gallery.length-1)) {
-        changePicture(parseInt(selectedPictureId)+1);
-        } else{
-            changePicture(0);    
-        }
-    });
+$("#arrowRight").parent().click(function () {
+    if (selectedPictureId < (gallery.length - 1)) {
+        changePicture(parseInt(selectedPictureId) + 1);
+    } else {
+        changePicture(0);
+    }
+});
+
+$(window).resize(function () {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#picture").offset().top
+    }, 100);
+});
