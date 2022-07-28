@@ -95,16 +95,23 @@ $("#arrowRight").parent().click(function () {
     }
 });
 
-$(window).resize(function () {
-    window.scrollTo(0,1);
+$(window).resize(function () {  
+    window.scrollTo(0, 1);
+
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#gallery").offset().top
+    }, 2);
+
+    window.scrollTo(0, 1);
     $([document.documentElement, document.body]).animate({
         scrollTop: $("#picture").offset().top
-    }, 100);
+    }, 10);
 });
 
+
 //hide mobile address bar
-window.addEventListener("load",function() {
-    setTimeout(function(){
+window.addEventListener("load", function () {
+    setTimeout(function () {
         window.scrollTo(0, 1);
     }, 0);
 });
