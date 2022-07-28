@@ -9,6 +9,10 @@ button{
     padding: 5px;
     margin: 10px 6px;
 }
+.oldNav {
+    background-color: lightgray;
+    font-size: 0.6rem;
+}
 button:hover{
     border: 4px solid rgba(150, 50, 50, 0.8);
     margin: 6px 2px;

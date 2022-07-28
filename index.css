@@ -10,8 +10,8 @@ nav{
   align-content: flex-end;
   width: auto;
 }
-nav * {
-  margin: 0px;
+#navbar {
+  margin: 10px;
   padding: 0px;
 }
 body{
