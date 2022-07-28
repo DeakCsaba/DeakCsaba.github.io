@@ -101,3 +101,10 @@ $(window).resize(function () {
         scrollTop: $("#picture").offset().top
     }, 100);
 });
+
+//hide mobile address bar
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        window.scrollTo(0, 1);
+    }, 0);
+});
