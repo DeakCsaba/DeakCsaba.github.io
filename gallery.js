@@ -34,52 +34,52 @@ function changePicture (index) {
     selectedPictureId = index;
     $("[id|='galleryThumbnailActive']").attr('id', '');
     $( "img[galleryId|='"+index+"']" ).attr('id', 'galleryThumbnailActive');
-    AsideInactiveSwitch(selectedPictureId);
+    arrowInactiveSwitch(selectedPictureId);
     //console.log('A kiválasztott kép ID-ja: ',selectedPictureId,'. a tömb értékei: ',pictureLoad);
     }
 
 /* NOT WORKING :(( BUT FOUND ANOTHER SOLUTION!
-function AsideInactiveSwitch() {
+function arrowInactiveSwitch() {
     if (selectedPictureId == 0) {
-        $( "#asideLeft" ).attr('id', 'asideLeftInactive')
-        } else $( "#asideLeftInactive" ).attr('id', 'asideLeft')
+        $( "#arrowLeft" ).attr('id', 'arrowLeftInactive')
+        } else $( "#arrowLeftInactive" ).attr('id', 'arrowLeft')
 
     if (selectedPictureId == gallery.length-1) {
-        $( "#asideRight" ).attr('id', 'asideRightInactive')
-        } else $( "#asideRightInactive" ).attr('id', 'asideRight')
+        $( "#arrowRight" ).attr('id', 'arrowRightInactive')
+        } else $( "#arrowRightInactive" ).attr('id', 'arrowRight')
 }
 */
 
-function AsideInactiveSwitch(selectedId) {
+function arrowInactiveSwitch(selectedId) {
     if (selectedId == 0) {
-        $( "#asideLeft" ).css('color', 'aliceblue');
+        $( "#arrowLeft" ).css('color', 'aliceblue');
         } else {
-            $( "#asideLeft" ).css('color', 'black');
+            $( "#arrowLeft" ).css('color', 'black');
         }
         
     if (selectedId == gallery.length-1) {
-        $( "#asideRight" ).css('color', 'aliceblue');
+        $( "#arrowRight" ).css('color', 'aliceblue');
         } else {
-            $( "#asideRight" ).css('color', 'black');
+            $( "#arrowRight" ).css('color', 'black');
         }
 }
 
 /*
-OLD VERSION: INACTIVATE ASIDE AT FIRST AND LAST PIC
-$( "#asideLeft" ).parent().click(function() {
+OLD VERSION: INACTIVATE ARROW AT FIRST AND LAST PIC
+$( "#arrowLeft" ).parent().click(function() {
     if (selectedPictureId > 0) {
         changePicture(selectedPictureId-1)
         }
     });
 
-$( "#asideRight" ).parent().click(function() {
+$( "#arrowRight" ).parent().click(function() {
     if (selectedPictureId < gallery.length-1) {
         changePicture(selectedPictureId+1)
         }
     });
 */
 
-$( "#asideLeft" ).parent().click(function() {
+$( "#arrowLeft" ).parent().click(function() {
     if (selectedPictureId > 0) {
         changePicture(parseInt(selectedPictureId)-1);
         } else{
@@ -87,7 +87,7 @@ $( "#asideLeft" ).parent().click(function() {
         }
     });
 
-$( "#asideRight" ).parent().click(function() {
+$( "#arrowRight" ).parent().click(function() {
     if (selectedPictureId < (gallery.length-1)) {
         changePicture(parseInt(selectedPictureId)+1);
         } else{
